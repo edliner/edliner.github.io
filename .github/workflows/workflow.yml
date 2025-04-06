@@ -1,6 +1,7 @@
 on: push
 jobs:
   website:
+    runs-on: ubuntu-latest
     steps:
       - run: git checkout --orphan web
       - run: sh blog.sh
