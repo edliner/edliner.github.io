@@ -4,7 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: git branch --delete --force web
       - run: git checkout --orphan web
       - run: sh blog.sh
       - run: git rm -rf template.html *.md *.sh
