@@ -4,13 +4,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: git config user.name edliner
+      - run: git config user.email "edliner@proton.me"
       - run: git checkout --orphan web
       - run: sh blog.sh
       - run: git rm -rf .github template.html *.md *.sh
       - run: ls -lR
       - run: mv web/* .
+      - run: ls -lR
       - run: git add .
-      - run: git config user.name edliner
-      - run: git config user.email "edliner@proton.me"
+      - run: git status
       - run: git commit -m "build website by gh actions"
       - run: git push -f origin web
