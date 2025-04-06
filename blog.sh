@@ -7,8 +7,8 @@ for file in *.md; do
     echo $date
     echo $path
     mkdir "web/$path"
-    set -x; pandoc "$file" --template "template.html" -V "ispost=ispost" -V "date=$date" -o "web/$path/index.html"; set +x
+    set -x; pandoc "$file" --template "template.html" -V "ispost=ispost" -V "title=$title" -V "date=$date" -o "web/$path/index.html"; set +x
     echo "$date - <a href=\"$path/\">$title</a>" >> index.md
 done
-set -x; pandoc "index.md" --template "template.html" -o "web/index.html"; set +x
+set -x; pandoc "index.md" --template "template.html" -V "title=Ed's Blog" -o "web/index.html"; set +x
 rm -f index.md
