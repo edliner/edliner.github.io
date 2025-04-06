@@ -9,4 +9,5 @@ jobs:
       - run: git rm -rf *.html *.md *.sh
       - run: mv web/* .
       - run: git add .
+      - run: git commit -m "build website by gh actions"
       - run: git push -f origin web
