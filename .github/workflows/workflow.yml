@@ -4,6 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: apt-get install pandoc
       - run: git config user.name edliner
       - run: git config user.email "edliner@proton.me"
       - run: git checkout --orphan web
