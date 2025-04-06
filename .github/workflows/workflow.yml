@@ -6,7 +6,8 @@ jobs:
       - uses: actions/checkout@v4
       - run: git checkout --orphan web
       - run: sh blog.sh
-      - run: git rm -rf template.html *.md *.sh
+      - run: git rm -rf .github template.html *.md *.sh
+      - run: ls -lR
       - run: mv web/* .
       - run: git add .
       - run: git config user.name edliner
