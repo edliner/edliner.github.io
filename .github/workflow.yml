@@ -1,9 +1,8 @@
-on: push
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
-  website:
-    - run: git checkout --orphan web
-    - run: sh blog.sh
-    - run: git rm -rf *.html *.md *.sh
-    - run: mv web/* .
-    - run: git add .
-    - run: git push -f origin web
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
