@@ -1,9 +1,10 @@
 on: push
 jobs:
   website:
-    - run: git checkout --orphan web
-    - run: sh blog.sh
-    - run: git rm -rf *.html *.md *.sh
-    - run: mv web/* .
-    - run: git add .
-    - run: git push -f origin web
+    steps:
+      - run: git checkout --orphan web
+      - run: sh blog.sh
+      - run: git rm -rf *.html *.md *.sh
+      - run: mv web/* .
+      - run: git add .
+      - run: git push -f origin web
